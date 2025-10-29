@@ -1,14 +1,11 @@
 # Audio Denoising Model Comparison Project
-'''
-to use GPU
-pip install tensorflow-metal
-'''
+
 This project implements and compares three different deep learning models for audio denoising:
-- **U-Net**: Fast implementation with separable convolutions
+- **U-Net**:  Implementation with separable convolutions
 - **Attention U-Net**: Enhanced U-Net with attention mechanisms  
 - **CNN-Transformer**: Hybrid architecture combining CNN and Transformer
 
-## � Quick Start - NEW Workflow
+## Quick Start - NEW Workflow
 
 ### 1. Data Preprocessing
 First, run the data preprocessing to download and prepare the datasets:
@@ -68,7 +65,7 @@ This will:
     └── cnn_transformer_results.pkl
 ```
 
-## 📊 Generated Outputs
+##  Generated Outputs
 
 ### Training Results (from individual model scripts)
 Each model saves:
@@ -84,7 +81,7 @@ Each model saves:
 - `generated_audio/`: Denoised audio samples from each model
 - Detailed performance tables in terminal output
 
-## 🛠️ Technical Details
+##  Technical Details
 
 ### Models
 - **U-Net**: Uses separable convolutions for efficiency, ~2.7M parameters
@@ -98,9 +95,9 @@ Each model saves:
 - **Batch Processing**: Memory-efficient 500-sample batches
 
 ### Training Configuration
-- **Epochs**: 50 with early stopping (patience=10)
+- **Epochs**: 100 with early stopping (patience=10)
 - **Batch Size**: 16 (adjustable based on memory)
-- **Optimizer**: Adam with learning rate 0.001
+- **Optimizer**: Adam with learning rate 5e-4
 - **Mixed Precision**: Enabled for stability and speed
 
 ### Evaluation Metrics
@@ -109,7 +106,7 @@ Each model saves:
 - **PSNR**: Peak signal-to-noise ratio (higher is better)
 - **Cosine Similarity**: Feature similarity measure (higher is better)
 
-## 🔧 Dependencies
+## Dependencies
 
 Install required packages:
 ```bash
@@ -124,7 +121,7 @@ Main dependencies:
 - scikit-learn >= 1.0.0
 - kaggle >= 1.5.0
 
-## 📈 Performance Comparison
+##  Performance Comparison
 
 The comparison script automatically identifies the best-performing model for each metric and displays results in formatted tables:
 
@@ -146,7 +143,7 @@ PSNR                : CNN-Transformer (30.123456)
 COSINE_SIMILARITY   : CNN-Transformer (0.975678)
 ```
 
-## 🎵 Audio Playback
+##  Audio Playback
 
 Generated audio samples are saved in the `generated_audio/` directory:
 ```
@@ -159,21 +156,21 @@ generated_audio/
 └── cnn_transformer_sample_2.wav
 ```
 
-## 💡 Tips for Best Results
+##  Tips for Best Results
 
 1. **Hardware**: Use a GPU if available for faster training
-2. **Memory**: Each model needs ~6-8GB RAM during training
-3. **Storage**: Ensure ~10GB free space for datasets and results
-4. **Time**: Each model takes 20-60 minutes to train on modern hardware
+2. **Memory**: Each model needs ~8-10GB RAM during training
+3. **Storage**: Ensure ~15GB free space for datasets and results
+4. **Time**: Each model takes 120-180 minutes to train 
 5. **Kaggle Setup**: Configure API credentials for automatic dataset download
 
-## � Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
 **No model results found**
 ```bash
-❌ No model results found!
+ No model results found!
 Please run the individual model training scripts first:
   python3 unet_model.py
   python3 attention_unet_model.py 
@@ -198,15 +195,8 @@ pip install -r requirements.txt
 - Models work on both CPU and GPU
 - Check TensorFlow-GPU installation if using GPU
 
-## 🔄 Workflow Summary
+##  Workflow Summary
 
 1. **Preprocessing** → Downloads data, creates spectrograms → `spec_arrays/`
 2. **Individual Training** → Each model trains independently → `model_results/`  
 3. **Comparison** → Loads results, compares, visualizes → `*.png` files + `generated_audio/`
-
-This new modular approach allows you to:
-- ✅ Run models separately and independently
-- ✅ Compare specific models without retraining others
-- ✅ Debug individual models more easily
-- ✅ Scale training across multiple machines/sessions
-- ✅ Resume interrupted workflows
