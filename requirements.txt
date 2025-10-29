@@ -1,0 +1,29 @@
+# Requirements for Audio Denoising Project
+# Install with: pip install -r requirements.txt
+
+# Core scientific computing
+numpy
+pandas
+matplotlib
+scikit-learn
+scikit-image
+scipy
+
+# Audio processing
+soundfile
+librosa
+
+# Deep learning
+tensorflow>=2.8.0
+keras
+
+# Progress bars and utilities
+tqdm
+ipython
+
+# Data download
+kagglehub
+
+# Optional: For Jupyter notebook support (if needed)
+# jupyter
+# ipywidgets
