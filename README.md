@@ -49,7 +49,7 @@ This will:
 - Create spectrogram comparison visualizations
 - Generate denoised audio samples
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── data_preprocessing.py      # Data download and preprocessing pipeline
