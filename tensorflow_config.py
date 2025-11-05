@@ -76,9 +76,9 @@ def get_optimal_batch_size(model_type="attention_unet"):
         if model_type == "attention_unet":
             return 4  # Conservative for Attention U-Net (memory intensive)
         elif model_type == "unet":
-            return 8  # Regular U-Net can handle larger batches
+            return 4  # Regular U-Net can handle larger batches
         elif model_type == "cnn_transformer":
-            return 6  # CNN-Transformer hybrid - moderate batch size
+            return 4  # CNN-Transformer hybrid - moderate batch size
         else:
             return 4  # Safe default
     except:
