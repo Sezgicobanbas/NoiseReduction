@@ -509,9 +509,9 @@ if __name__ == "__main__":
     
     class Config:
         """Configuration for training parameters"""
-        EPOCHS = 100
+        EPOCHS = 50
         BATCH_SIZE = None  # Will be auto-determined based on hardware
-        LEARNING_RATE = 1e-3  # Slightly lower for mixed precision stability
+        LEARNING_RATE = 5e-4 # Slightly lower for mixed precision stability
 
     def load_preprocessed_data():
         """Load the preprocessed spectrogram data"""
